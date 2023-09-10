@@ -1,4 +1,8 @@
 import React, { useState } from 'react';
+import {
+  motion,
+  AnimatePresence,
+} from '../../../node_modules/framer-motion/dist/framer-motion';
 import styled from 'styled-components';
 import Login from '../../components/Login/Login';
 import HistoryBox from '../../components/Mypage/HistoryBox/HistoryBox';
@@ -9,7 +13,11 @@ export default function DashboardLogOut() {
 
   return (
     <S.DashboardContainer>
-      {loginModalOn && <Login />}
+      <AnimatePresence>
+        {loginModalOn && (
+          <Login loginModalOn setLoginModalOn={setLoginModalOn} />
+        )}
+      </AnimatePresence>
       <S.LoginWrapper onClick={() => setLoginModalOn(true)}>
         <S.LoginSpan>Log In</S.LoginSpan>
         <S.LoginIcon src={process.env.PUBLIC_URL + `/images/loginIcon.svg`} />
