@@ -1,4 +1,4 @@
-//present
+//before
 (function (global, factory) {
   if (typeof define === 'function' && define.amd) {
     define(['jquery'], function ($) {
