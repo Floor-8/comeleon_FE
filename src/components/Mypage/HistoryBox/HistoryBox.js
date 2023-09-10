@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import styled from 'styled-components';
 import * as S from './HistoryBox.style';
 
 export default function HistoryBox() {
@@ -7,7 +6,7 @@ export default function HistoryBox() {
 
   useEffect(() => {
     ACCESS_TOKEN &&
-      fetch('http://192.168.1.127:3310/users/chats', {
+      fetch('http://192.168.0.15:3310/users/chats', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

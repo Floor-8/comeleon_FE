@@ -15,7 +15,7 @@ const GoogleLoginBtn = ({ setLoginModalOn }) => {
   const token = localStorage.getItem('token');
 
   const postCredential = credentialResponse => {
-    fetch('http://192.168.1.127:3310/users/login', {
+    fetch('http://192.168.0.15:3310/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -27,6 +27,7 @@ const GoogleLoginBtn = ({ setLoginModalOn }) => {
       .then(res => {
         console.log('결과', res);
         console.log('토큰', token);
+        console.log('credential', credentialResponse);
         return res.json();
       })
       .then(data => {

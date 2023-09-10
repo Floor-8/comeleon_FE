@@ -10,6 +10,10 @@ const Mypage = ({ setMypageOn }) => {
     const imageUrl = URL.createObjectURL(file);
     setUploadedImage(imageUrl);
   };
+  //아직안함
+  const onClickLogout = () => {
+    setMypageOn(false);
+  };
   return (
     <S.MypageWhole className="temp">
       <S.MypageContainer>
